@@ -1,33 +1,22 @@
 package bl;
 
-import data.Pizza;
+import data.Basket;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BasketDatabase {
+    private Basket basket;
+    public static BasketDatabase instance;
 
-    private static BasketDatabase theInstance;
-    private List<Pizza> pizzaList;
-
-
-    public BasketDatabase(){
-        csvHaendler z = new csvHaendler();
-        pizzaList = new ArrayList<>();
-
-        pizzaList = z.readCSV();
-
-    }
-
-
-
-
-    public synchronized static BasketDatabase getTheInstance(){
-        if (theInstance == null){
-            theInstance = new BasketDatabase();
+    public synchronized static BasketDatabase getTheInstance() {
+        if(instance == null) {
+            instance = new BasketDatabase();
         }
-        return theInstance;
+        return instance;
     }
 
+    public Basket getBasket() {
+        return basket;
+    }
 
 }
