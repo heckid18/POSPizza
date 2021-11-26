@@ -1,6 +1,8 @@
 package com.example.ex009_pizzaservice;
 
+import bl.BasketDatabase;
 import bl.PizzaDatabase;
+import data.Pizza;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
@@ -18,5 +20,10 @@ public class PizzaResource {
 
     @PUT
     @Produces("application/json")
-    public Response addPizza
+    public Response addPizza(Pizza p){
+
+        BasketDatabase.getTheInstance().getBasket().getProducts().add(p);
+
+        return Response.status(Response.Status.NO_CONTENT).build();
+    }
 }

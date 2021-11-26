@@ -18,4 +18,8 @@ public class BasketDatabase {
     public Basket getBasket() {
         return basket;
     }
+
+    public void addProduct() {
+        basket.setProducts(baske
+    }
 }
