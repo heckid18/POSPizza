@@ -1,0 +1,5 @@
+Magherita,6.50,res/magherita.jpg
+Salami,7.00,res/salami.jpg
+Prosciutto,7.00,res/prosciutto.jpg
+Rucola,12.00,res/rucola.jpg
+Hawaii,8.00,res/hawaii.jpg
