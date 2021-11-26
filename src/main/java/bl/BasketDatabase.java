@@ -20,14 +20,14 @@ public class BasketDatabase {
     }
 
 
+
+
     public synchronized static BasketDatabase getTheInstance(){
         if (theInstance == null){
             theInstance = new BasketDatabase();
         }
         return theInstance;
     }
-
-    
 
 
 }
