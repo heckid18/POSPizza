@@ -24,13 +24,12 @@ public class CSVHandler {
     */
 
 
-    public List<Pizza> readCSV(){
+    public List<Pizza> readCSV(String filePath){
         List<Pizza> pizzas = new ArrayList<>();
         String line = "";
         final String delimiter = ",";
         try
         {
-            String filePath = "res/data.txt";
             FileReader fileReader = new FileReader(filePath);
 
             BufferedReader reader = new BufferedReader(fileReader);
