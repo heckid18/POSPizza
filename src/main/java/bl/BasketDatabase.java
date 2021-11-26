@@ -19,7 +19,4 @@ public class BasketDatabase {
         return basket;
     }
 
-    public void addProduct() {
-        basket.setProducts(baske
-    }
 }
