@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class csvHaendler {
+public class CSVHandler {
 
 
 
@@ -22,24 +22,6 @@ public class csvHaendler {
 
     Scanner sc= new Scanner(filepath);
     */
-
-    public void writeCSV(String filename, List<Pizza> data) {
-        try {
-            File myObj = new File("filename.csv");
-            if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (Exception e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-
-        for (Pizza p : data) {
-
-        }
-    }
 
 
     public List<Pizza> readCSV(){

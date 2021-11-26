@@ -12,7 +12,7 @@ public class BasketDatabase {
 
 
     public BasketDatabase(){
-        csvHaendler z = new csvHaendler();
+        CSVHandler z = new CSVHandler();
         pizzaList = new ArrayList<>();
 
         pizzaList = z.readCSV();
