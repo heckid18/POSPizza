@@ -34,7 +34,7 @@ public class CSVHandler {
             while ((line = reader.readLine()) != null)
             {
                 String[] token = line.split(delimiter);
-               pizzas.add(new Pizza(token[0],(float) Integer.parseInt(token[1]),token[2]));
+               pizzas.add(new Pizza(Integer.parseInt(token[0]),token[1],(float) Integer.parseInt(token[1]),token[2]));
             }
         }
         catch (Exception e)
