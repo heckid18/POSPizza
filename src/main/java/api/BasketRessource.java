@@ -1,11 +1,12 @@
 package api;
 
 import bl.BasketDatabase;
-import bl.PizzaDatabase;
+import data.Basket;
 import data.Pizza;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriBuilder;
 import jakarta.ws.rs.core.UriInfo;
 
 import java.util.NoSuchElementException;
@@ -42,15 +43,17 @@ public class BasketRessource {
         return Response.status(Response.Status.NO_CONTENT).build();
     }
 
-    @DELETE
+
+    @GET
     @Produces("application/json")
-    @Path("/{pizzaId}")
-    public Response deletePizza(@PathParam("pizzaId") int pizzaId) {
-        try{
-            return Response.ok().entity(BasketDatabase.getTheInstance().deletePizza(pizzaId)).build();
-        } catch (NoSuchElementException nsex){
+    public Response getBasket() {
+        try {
+
+            Basket basket =  BasketDatabase.getTheInstance().getBasket();
+            return Response.ok(basket).build();
+        }
+        catch(NoSuchElementException nsee){
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
-
 }
