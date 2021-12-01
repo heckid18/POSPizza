@@ -33,6 +33,7 @@ public class PizzaDatabase {
 
 
     public List<Pizza> getPizzaList() {
+        System.out.println(pizzaList);
         return pizzaList;
     }
 
