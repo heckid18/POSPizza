@@ -17,13 +17,4 @@ public class PizzaResource {
     public Response getAllPizzas() {
              return Response.ok().entity(PizzaDatabase.getTheInstance().getPizzaList()).build();
      }
-
-    @PUT
-    @Produces("application/json")
-    public Response addPizza(Pizza p){
-
-        BasketDatabase.getTheInstance().getBasket().getProducts().add(p);
-
-        return Response.status(Response.Status.NO_CONTENT).build();
-    }
 }
