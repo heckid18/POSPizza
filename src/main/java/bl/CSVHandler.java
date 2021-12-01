@@ -1,10 +1,8 @@
 package bl;
 
-import com.sun.java.swing.action.AlignRightAction;
 import data.Pizza;
 import lombok.Data;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;

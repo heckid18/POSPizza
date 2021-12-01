@@ -48,7 +48,6 @@ public class BasketRessource {
     @Produces("application/json")
     public Response getBasket() {
         try {
-
             Basket basket =  BasketDatabase.getTheInstance().getBasket();
             return Response.ok(basket).build();
         }
