@@ -1,12 +1,15 @@
 package api;
 
 import bl.BasketDatabase;
+import data.Basket;
 import data.Pizza;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriBuilder;
 import jakarta.ws.rs.core.UriInfo;
+
+import java.util.NoSuchElementException;
 
 @Path("/basket")
 public class BasketRessource {
@@ -40,4 +43,16 @@ public class BasketRessource {
         return Response.status(Response.Status.NO_CONTENT).build();
     }
 
+
+    @GET
+    @Produces("application/json")
+    public Response getBasket() {
+        try {
+            Basket basket =  BasketDatabase.getTheInstance().getBasket();
+            return Response.ok(basket).build();
+        }
+        catch(NoSuchElementException nsee){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+    }
 }
