@@ -31,10 +31,12 @@ public class CSVHandler {
             FileReader fileReader = new FileReader(filePath);
 
             BufferedReader reader = new BufferedReader(fileReader);
+
             while ((line = reader.readLine()) != null)
             {
                 String[] token = line.split(delimiter);
-               pizzas.add(new Pizza(Integer.parseInt(token[0]),token[1],(float) Integer.parseInt(token[1]),token[2]));
+                System.out.println("Token 0:"+token[1]);
+               pizzas.add(new Pizza(Integer.parseInt(token[0]), token[1],Float.valueOf(token[2]),token[3]));
             }
         }
         catch (Exception e)
