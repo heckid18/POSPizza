@@ -17,7 +17,7 @@ public class PizzaDatabase {
         CSVHandler z = new CSVHandler();
         pizzaList = new ArrayList<>();
 
-        pizzaList = z.readCSV("C:/4DHIF/POS1/Intellij/Ex009_Pizzaservice/src/main/java/res/data.csv");
+        pizzaList = z.readCSV("src/main/java/res/data.csv");
 
     }
 
